@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Onest } from "next/font/google";
+import { Onest } from "next/font/google";
 import "./globals.css";
 import Layouts from "@/components/layouts/Layouts";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import Background from "@/components/layouts/background/Background";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 const fontOnest = Onest({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -28,11 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${fontOnest.className} ${geistMono.variable} antialiased`}
-      >
-        <Layouts>{children}</Layouts>
+    <html lang='en' suppressHydrationWarning>
+      <body className={` ${fontOnest.className} antialiased`}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Background />
+          <Layouts>{children}</Layouts>
+        </ThemeProvider>
       </body>
     </html>
   );

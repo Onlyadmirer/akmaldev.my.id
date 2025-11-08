@@ -8,7 +8,7 @@ function Navbar() {
   const { isMobile } = useIsMobile();
 
   return (
-    <div className='py-8'>{isMobile ? <MobileNav /> : <DekstopNav />}</div>
+    <div className='py-6'>{isMobile ? <MobileNav /> : <DekstopNav />}</div>
   );
 }
 
