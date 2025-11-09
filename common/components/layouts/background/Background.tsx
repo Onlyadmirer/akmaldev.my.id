@@ -44,25 +44,14 @@ function Background() {
       ) : (
         <>
           {/* Light mode background */}
-          <div className=' w-full  '>
-            {/* Cool Blue Glow Top */}
-            <div
-              className='absolute inset-0 -z-10'
-              style={{
-                background: "#ffffff",
-                backgroundImage: `
-        radial-gradient(
-          circle at top center,
-          rgba(70, 130, 180, 0.5),
-          transparent 70%
-        )
-      `,
-                filter: "blur(80px)",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-            {/* Your Content/Components */}
-          </div>
+          {/* Cool Blue Glow Top */}
+          <div
+            className='absolute inset-0 -z-10'
+            style={{
+              background: "#F5F5F5",
+            }}
+          />
+          {/* Your Content/Components */}
         </>
       )}
     </div>

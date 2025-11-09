@@ -4,7 +4,7 @@ import "./globals.css";
 import Layouts from "@/common/components/layouts/Layouts";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import Background from "@/common/components/layouts/background/Background";
-import NextTopLoader from "nextjs-toploader";
+import TopLoader from "@/common/components/elements/TopLoader";
 
 const fontOnest = Onest({
   subsets: ["latin"],
@@ -24,17 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={` ${fontOnest.className} antialiased`}>
-        <NextTopLoader
-          color='#ff0000d3'
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={false}
-          easing='ease'
-          speed={200}
-          shadow='0 0 10px #ff00009d,0 0 5px #ff3a3ac6'
-        />
+        <TopLoader />
 
         <ThemeProvider
           attribute='class'

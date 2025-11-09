@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { LuMoonStar, LuSun } from "react-icons/lu";
 
 interface props {
@@ -10,6 +11,16 @@ interface props {
 
 const ThemeToggle = ({ className }: props) => {
   const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsMounted(true), 0);
+    return () => clearTimeout(timer);
+  });
+
+  if (!mounted) {
+    return null;
+  }
 
   const isLightMode = resolvedTheme === "light";
 
