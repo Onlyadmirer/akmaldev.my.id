@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { RiMenu3Fill, RiVerifiedBadgeFill } from "react-icons/ri";
-import ThemeToggle from "../../ui/ThemeToggle";
+import ThemeToggle from "../../../shared/ui/ThemeToggle";
 import Link from "next/link";
 import { useNavbar } from "@/hooks/useNavbar";
 import { BsArrowRight } from "react-icons/bs";
