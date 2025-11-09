@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "./globals.css";
-import Layouts from "@/components/layouts/Layouts";
+import Layouts from "@/src/components/layouts/Layouts";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import Background from "@/components/layouts/background/Background";
+import Background from "@/src/components/layouts/background/Background";
 
 const fontOnest = Onest({
   subsets: ["latin"],
