@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 function Background() {
   const { resolvedTheme } = useTheme();
@@ -13,7 +13,6 @@ function Background() {
   }, []);
 
   if (!mounted) {
-    // Hindari render background sebelum hydration
     return (
       <div className='absolute inset-0 -z-10 bg-neutral-100 dark:bg-neutral-900' />
     );
