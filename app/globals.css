@@ -3,18 +3,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --common: #ff00009d;
-  --primary: #ffffff;
-  --secondary: #121212;
+  --primary: #262626;
+  --muted: #3f3f47;
 }
 
 @theme inline {
   --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-base: var(--base);
+  --color-muted: var(--muted);
 }
 
 .dark {
-  --primary: #121212;
-  --secondary: #ffffff;
+  --primary: #fafafa;
+  --muted: #d4d4d4;
 }
