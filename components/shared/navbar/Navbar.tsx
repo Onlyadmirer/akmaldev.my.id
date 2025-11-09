@@ -1,14 +1,33 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/useIsMobile";
 import DekstopNav from "./dekstop/DekstopNav";
 import MobileNav from "./mobile/MobileNav";
+import { AnimatePresence, motion } from "motion/react";
 
 function Navbar() {
-  const { isMobile } = useIsMobile();
-
   return (
-    <div className='py-6'>{isMobile ? <MobileNav /> : <DekstopNav />}</div>
+    <AnimatePresence>
+      <motion.div
+        key='mobile'
+        initial={{ opacity: 0, y: -10 }} // Mulai dari atas, transparan
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }} // Keluar ke bawah
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className='md:hidden'
+      >
+        <MobileNav />
+      </motion.div>
+      <motion.div
+        key='desktop'
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className='hidden md:block'
+      >
+        <DekstopNav />
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

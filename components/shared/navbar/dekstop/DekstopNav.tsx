@@ -1,57 +1,15 @@
-"use client";
-
 import Image from "next/image";
 import ThemeToggle from "../../ui/ThemeToggle";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import {
-  LuBookUser,
-  LuGalleryVerticalEnd,
-  LuHouse,
-  LuLayoutDashboard,
-  LuUser,
-} from "react-icons/lu";
-import { PiCertificate } from "react-icons/pi";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { BsArrowRight } from "react-icons/bs";
+import { useNavbar } from "@/hooks/useNavbar";
 
 function DekstopNav() {
-  const pathName = usePathname();
-  const menuItems = [
-    {
-      label: "Home",
-      href: "/",
-      icon: <LuHouse size={20} />,
-    },
-    {
-      label: "About",
-      href: "/about",
-      icon: <LuUser size={20} />,
-    },
-    {
-      label: "Achievements",
-      href: "/achievements",
-      icon: <PiCertificate size={20} />,
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-      icon: <LuGalleryVerticalEnd size={20} />,
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-      icon: <LuLayoutDashboard size={20} />,
-    },
-    {
-      label: "Contact",
-      href: "/contact",
-      icon: <LuBookUser size={20} />,
-    },
-  ];
+  const { pathName, menuItems } = useNavbar();
 
   return (
-    <div className='flex h-full flex-col'>
+    <div className='flex h-full flex-col px-4'>
       <div className='h-2/6 flex flex-col items-center gap-3 border-b border-secondary/40'>
         <div className='overflow-hidden w-22 h-22 rounded-full border-2 border-secondary/50 relative'>
           <Image
