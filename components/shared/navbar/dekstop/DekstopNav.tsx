@@ -9,8 +9,8 @@ function DekstopNav() {
   const { pathName, menuItems } = useNavbar();
 
   return (
-    <div className='flex h-full flex-col px-4'>
-      <div className='h-2/6 flex flex-col items-center gap-3 border-b border-secondary/40'>
+    <div className='flex h-full flex-col px-2'>
+      <div className='flex-3 flex flex-col pb-2 items-center gap-3 border-b border-secondary/40'>
         <div className='overflow-hidden w-22 h-22 rounded-full border-2 border-secondary/50 relative'>
           <Image
             src={"/pp.jpeg"}
@@ -30,7 +30,7 @@ function DekstopNav() {
           <ThemeToggle />
         </div>
       </div>
-      <div className='h-3/6 py-4 flex flex-col gap-1 border-b border-secondary/40'>
+      <div className='flex-4 py-4 flex flex-col gap-1 border-b border-secondary/40'>
         {menuItems.map((item) => (
           <Link
             href={item.href}
@@ -49,7 +49,7 @@ function DekstopNav() {
           </Link>
         ))}
       </div>
-      <div className='h-1/6 py-4'>
+      <div className='flex-1 py-4'>
         <h1 className='text-center text-lg'>
           © {new Date().getFullYear()} Akmal. All rights reserved.
         </h1>

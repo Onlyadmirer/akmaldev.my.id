@@ -52,5 +52,5 @@ export const useNavbar = () => {
     setShowMenu(!showMenu);
   };
 
-  return { pathName, menuItems, toggleMenu, showMenu };
+  return { pathName, menuItems, toggleMenu, showMenu, setShowMenu };
 };

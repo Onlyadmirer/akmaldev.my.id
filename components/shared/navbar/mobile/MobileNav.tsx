@@ -9,7 +9,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 
 function MobileNav() {
-  const { pathName, menuItems, toggleMenu, showMenu } = useNavbar();
+  const { pathName, menuItems, toggleMenu, setShowMenu, showMenu } =
+    useNavbar();
 
   return (
     <div
@@ -50,7 +51,7 @@ function MobileNav() {
             <IoMdClose
               size={26}
               onClick={() => toggleMenu()}
-              className={` transition-all duration-500 ease-in-out ${
+              className={` transition-all duration-500 cursor-pointer ease-in-out ${
                 showMenu && "row-start-1"
               }`}
             />
@@ -58,7 +59,7 @@ function MobileNav() {
             <RiMenu3Fill
               size={26}
               onClick={() => toggleMenu()}
-              className={`transition-all duration-500 ease-in-out ${
+              className={`transition-all duration-500 cursor-pointer ease-in-out ${
                 showMenu && "row-start-1"
               }`}
             />
@@ -74,6 +75,7 @@ function MobileNav() {
           <Link
             href={item.href}
             key={item.label}
+            onClick={() => setShowMenu(!showMenu)}
             className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 transition-all duration-200 ease-in-out hover:bg-secondary/10 ${
               pathName === item.href
                 ? "bg-secondary/10 scale-105"
