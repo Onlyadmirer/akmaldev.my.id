@@ -1,21 +1,22 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/useIsMobile";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { LuMoonStar, LuSun } from "react-icons/lu";
 
-const ThemeToggle = () => {
-  const { resolvedTheme, setTheme } = useTheme();
+interface props {
+  className?: string;
+}
 
-  const { isMobile } = useIsMobile();
+const ThemeToggle = ({ className }: props) => {
+  const { resolvedTheme, setTheme } = useTheme();
 
   const isLightMode = resolvedTheme === "light";
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className={`flex items-center justify-center ${className}`}>
       {/* Desktop */}
-      <div className='relative hidden items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 dark:border-neutral-700 dark:bg-neutral-800 lg:flex'>
+      <div className='relative hidden items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 dark:border-neutral-700 dark:bg-neutral-800 md:flex'>
         {/* Sliding Background */}
         <motion.div
           className='absolute bottom-1 top-1 w-8 rounded-full bg-neutral-300 dark:bg-neutral-700'
@@ -65,19 +66,17 @@ const ThemeToggle = () => {
       </div>
 
       {/* Mobile */}
-      {isMobile && (
-        <button
-          className='flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 transition duration-200 hover:scale-110 dark:border-neutral-700 dark:bg-neutral-800 lg:hidden'
-          onClick={() => setTheme(isLightMode ? "dark" : "light")}
+      <button
+        className='flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 transition duration-200 hover:scale-110 dark:border-neutral-700 dark:bg-neutral-800 md:hidden'
+        onClick={() => setTheme(isLightMode ? "dark" : "light")}
+      >
+        <motion.div
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className='flex h-8 w-8 items-center justify-center rounded-full bg-neutral-300 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50'
         >
-          <motion.div
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className='flex h-8 w-8 items-center justify-center rounded-full bg-neutral-300 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50'
-          >
-            {isLightMode ? <LuSun size={17} /> : <LuMoonStar size={17} />}
-          </motion.div>
-        </button>
-      )}
+          {isLightMode ? <LuSun size={17} /> : <LuMoonStar size={17} />}
+        </motion.div>
+      </button>
     </div>
   );
 };
