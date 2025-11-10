@@ -21,15 +21,15 @@ function Background() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <div className='w-full'>
+    <>
       {isDark ? (
         <>
           {/* Dark mode background */}
           <div
-            className='absolute inset-0 -z-10 transition-bg'
+            className='fixed inset-0 -z-10 transition-bg'
             style={{
               background:
-                "linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #7d1a2f 32%, #591828 46%, #3c1722 60%, #2a151d 72%, #1f1317 84%, #141013 94%, #0a0a0a 100%)",
+                "linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), radial-gradient(68% 58% at 50% 50%, #8a2be2 0%, #7b1fa2 16%, #6a1b9a 32%, #5e1a8a 46%, #4d177a 60%, #3c146a 72%, #2c115c 84%, #1d0f4d 94%, #0a0a0a 100%)",
             }}
           />
           <div
@@ -46,7 +46,7 @@ function Background() {
           {/* Light mode background */}
           {/* Cool Blue Glow Top */}
           <div
-            className='absolute inset-0 -z-10'
+            className='fixed inset-0 -z-10'
             style={{
               background: "#F5F5F5",
             }}
@@ -54,7 +54,7 @@ function Background() {
           {/* Your Content/Components */}
         </>
       )}
-    </div>
+    </>
   );
 }
 

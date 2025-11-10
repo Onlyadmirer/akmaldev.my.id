@@ -14,18 +14,22 @@ function MobileNav() {
 
   return (
     <div
-      className={`py-4 flex flex-col px-4 fixed inset-x-0 top-0 z-50 bg-black/30 w-full backdrop-blur-2xl ${
+      className={`py-4 flex flex-col px-4 fixed inset-x-0 top-0 z-50 bg-transparent border-b border-primary/20 w-full backdrop-blur-2xl ${
         showMenu ? "h-screen" : "h-auto"
       }`}
     >
-      <div className='flex flex-row justify-between'>
+      <div
+        className={`flex flex-row justify-between ${
+          showMenu && "border-b border-muted/50 py-2"
+        }`}
+      >
         <div
           className={`flex transition-all duration-500 ease-in-out gap-4 ${
             showMenu ? "flex-col p-4" : "flex-row"
           }`}
         >
           <div
-            className={`overflow-hidden w-9 h-9 rounded-full border-2 border-secondary/50 relative ${
+            className={`overflow-hidden w-9 h-9 rounded-full border-2 border-muted/50 relative ${
               showMenu && "h-18 w-18"
             }`}
           >
@@ -76,9 +80,9 @@ function MobileNav() {
             href={item.href}
             key={item.label}
             onClick={() => setShowMenu(!showMenu)}
-            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 transition-all duration-200 ease-in-out hover:bg-secondary/10 ${
+            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 transition-all duration-200 ease-in-out hover:bg-muted/10 ${
               pathName === item.href
-                ? "bg-secondary/10 scale-105"
+                ? "bg-muted/10 scale-105"
                 : "bg-transparent"
             }`}
           >
