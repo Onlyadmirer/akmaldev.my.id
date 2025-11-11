@@ -47,6 +47,7 @@ const ThemeToggle = ({ className }: props) => {
           onClick={() => setTheme("light")}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
+          type='button'
         >
           <motion.div
             animate={{
@@ -64,6 +65,7 @@ const ThemeToggle = ({ className }: props) => {
           onClick={() => setTheme("dark")}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
+          type='button'
         >
           <motion.div
             animate={{
