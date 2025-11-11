@@ -4,7 +4,7 @@ import Skils from "./components/Skils";
 
 function Home() {
   return (
-    <div className='h-[999px]'>
+    <div>
       <Header />
       <Skils />
       <Featured />

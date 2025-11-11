@@ -1,4 +1,4 @@
-import SectionHeader from "@/common/components/elements/SectionHeader";
+import SectionHeader from "@/common/components/elements/SectionSubHeader";
 import { GrTechnology } from "react-icons/gr";
 import { useSkill } from "./useSkill";
 import Image from "next/image";
