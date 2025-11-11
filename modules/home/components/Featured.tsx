@@ -66,7 +66,7 @@ function Featured() {
           className='custom-spotlight-card h-80 '
           spotlightColor='rgba(200, 0, 100, 0.2)'
         >
-          <Link href={"/home"}>
+          <Link href={"/"}>
             <div className=' flex items-center flex-col gap-2'>
               <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
                 <GrTechnology

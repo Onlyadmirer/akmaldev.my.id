@@ -13,23 +13,50 @@ const fontOnest = Onest({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : process.env.DOMAIN || ""
+    process.env.NEXT_PUBLIC_DOMAIN ??
+      (process.env.NODE_ENV === "production"
+        ? "https://akmal.my.id"
+        : "http://localhost:3000")
   ),
-  description: "Personal website portofolio",
-  keywords: "akmal, akmaldev",
-  creator: "Akmal",
-  authors: {
-    name: "Akmal",
-    url: process.env.DOMAIN,
+  title: {
+    default: "Akmaldev",
+    template: "%s | Akmaldev",
   },
+  description:
+    "The personal portfolio of Akmal — a web developer passionate about building clean, modern, and efficient web experiences.",
+  keywords: ["Akmal", "Akmaldev", "Web Developer", "Portfolio", "Next.js"],
+  creator: "Akmal",
+  authors: [{ name: "Akmal", url: process.env.NEXT_PUBLIC_DOMAIN }],
   openGraph: {
-    images: "/pp.jpg",
-    url: process.env.DOMAIN,
-    siteName: "Akmaldev",
-    locale: "id-ID",
     type: "website",
+    locale: "id_ID",
+    url: process.env.NEXT_PUBLIC_DOMAIN,
+    siteName: "Akmaldev",
+    title: "Akmaldev — Web Developer & Designer",
+    description:
+      "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
+    images: [
+      {
+        url: "/pp.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Akmaldev Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Akmaldev — Web Developer & Designer",
+    description:
+      "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
+    images: ["/pp.jpeg"],
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_DOMAIN,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
