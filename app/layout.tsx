@@ -12,14 +12,24 @@ const fontOnest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "Akmal",
-  description: "Personal Website",
-  keywords: "akmal, akmaldev", // Kata kunci untuk search engine
+  metadataBase: new URL(
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : process.env.DOMAIN || ""
+  ),
+  description: "Personal website portofolio",
+  keywords: "akmal, akmaldev",
+  creator: "Akmal",
+  authors: {
+    name: "Akmal",
+    url: process.env.DOMAIN,
+  },
   openGraph: {
-    siteName: "Akmal",
-    url: "https://www.akmaldev.my.id",
-    type: "website",
+    images: "/pp.jpg",
+    url: process.env.DOMAIN,
+    siteName: "Akmaldev",
     locale: "id-ID",
+    type: "website",
   },
 };
 
