@@ -1,4 +1,17 @@
-import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Browse through Akmal’s web development projects — built using modern technologies and clean design principles.",
+  openGraph: {
+    title: "Akmaldev Projects",
+    description:
+      "Explore Akmal’s curated selection of web projects showcasing innovation, design, and performance.",
+    url: "/projects",
+    images: ["/pp.jpeg"],
+  },
+};
 
 function page() {
   return <div>page</div>;
