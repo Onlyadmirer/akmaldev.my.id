@@ -82,6 +82,7 @@ const ThemeToggle = ({ className }: props) => {
       <button
         className='flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-100 p-1 transition duration-200 hover:scale-110 dark:border-neutral-700 dark:bg-neutral-800 md:hidden'
         onClick={() => setTheme(isLightMode ? "dark" : "light")}
+        aria-label="thme toggle button"
       >
         <motion.div
           transition={{ duration: 0.3, ease: "easeInOut" }}
