@@ -28,7 +28,7 @@ function Featured() {
           spotlightColor='rgba(200, 0, 100, 0.2)'
         >
           <Link href={"/projects"} className='flex flex-row items-center gap-4'>
-            <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
+            <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
               <LuGalleryVerticalEnd
                 size={24}
                 className='object-cover w-full h-full'
@@ -49,7 +49,7 @@ function Featured() {
         >
           <Link href={"/about"}>
             <div className=' flex items-center flex-col gap-2'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
+              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <LuUser size={24} className='object-cover w-full h-full' />
               </div>
               <div className='text-center'>
@@ -68,7 +68,7 @@ function Featured() {
         >
           <Link href={"/"}>
             <div className=' flex items-center flex-col gap-2'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
+              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <GrTechnology
                   size={24}
                   className='object-cover w-full h-full'
@@ -90,7 +90,7 @@ function Featured() {
         >
           <Link href={"/achievements"}>
             <div className=' flex items-center flex-col gap-2'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
+              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <PiCertificate
                   size={24}
                   className='object-cover w-full h-full'
@@ -113,7 +113,7 @@ function Featured() {
         >
           <Link href={"/contact"}>
             <div className=' flex items-center flex-col gap-2'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
+              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <LuBookUser size={24} className='object-cover w-full h-full' />
               </div>
               <div className='text-center'>
@@ -132,7 +132,7 @@ function Featured() {
         >
           <Link href={"/dashboard"}>
             <div className=' flex flex-row items-center gap-4'>
-              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-800'>
+              <div className='p-3 rounded-xl h-14 w-14 bg-neutral-300 dark:bg-neutral-800'>
                 <LuLayoutDashboard
                   size={24}
                   className='object-cover w-full h-full'
