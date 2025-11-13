@@ -1,4 +1,4 @@
-import SectionHeader from "@/common/components/elements/SectionSubHeader";
+import SubSectionHeader from "@/common/components/elements/SubHeaderSection";
 import { GrTechnology } from "react-icons/gr";
 import { useSkill } from "./useSkill";
 import Image from "next/image";
@@ -14,7 +14,7 @@ function Skils() {
 
   return (
     <div className='py-6 border-b border-muted/50'>
-      <SectionHeader
+      <SubSectionHeader
         icon={<GrTechnology size={24} />}
         title='skills & tools'
         description='My professional Skills & Tools.'

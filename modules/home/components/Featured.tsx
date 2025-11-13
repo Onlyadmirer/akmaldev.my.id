@@ -1,6 +1,6 @@
 "use client";
 
-import SectionHeader from "@/common/components/elements/SectionSubHeader";
+import SubHeaderSection from "@/common/components/elements/SubHeaderSection";
 import SpotlightCard from "@/common/components/ui/SpotlightCard";
 import Link from "next/link";
 import { GrTechnology } from "react-icons/gr";
@@ -16,7 +16,7 @@ import { PiCertificate } from "react-icons/pi";
 function Featured() {
   return (
     <div className='py-6 '>
-      <SectionHeader
+      <SubHeaderSection
         icon={<MdBackupTable size={24} />}
         title='Featured Section'
         description='Explore everything I’ve crafted, contributed, and accomplished.'
