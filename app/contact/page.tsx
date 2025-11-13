@@ -1,3 +1,4 @@
+import Contact from "@/modules/contact/Contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 function page() {
-  return <div>page</div>;
+  return <Contact />;
 }
 
 export default page;

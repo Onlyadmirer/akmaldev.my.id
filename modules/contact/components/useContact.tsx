@@ -1,0 +1,53 @@
+"use client";
+
+import { BsInstagram } from "react-icons/bs";
+import { FaLinkedin, FaTiktok } from "react-icons/fa";
+import { SiGithub } from "react-icons/si";
+import { useForm } from "react-hook-form";
+import { ContactFormSchema, ContactType } from "@/lib/ContactFormSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+export const useContact = () => {
+  const items = [
+    {
+      title: "Instagram",
+      description: "Follow my latest activities and visual works on Instagram.",
+      action: "View Profile",
+      icon: <BsInstagram size={38} />,
+      background: "bg-[url(/backgroundSocialMedia/instagram.svg))]",
+    },
+    {
+      title: "LinkedIn",
+      description:
+        "Connect with me professionally and view my work history and career path.",
+      action: "View Profile",
+      icon: <FaLinkedin size={38} />,
+      background: "bg-[url(/backgroundSocialMedia/linkedin.svg))]",
+    },
+    {
+      title: "GitHub",
+      description:
+        "Explore my coding projects, contributions, and public repositories.",
+      action: "View Repositories",
+      icon: <SiGithub size={38} />,
+      background: "bg-[url(/backgroundSocialMedia/github.svg))]",
+    },
+    {
+      title: "TikTok",
+      description: "Watch short videos, creative content, or quick tutorials.",
+      action: "Watch Content",
+      icon: <FaTiktok size={38} />,
+      background: "bg-[url(/backgroundSocialMedia/tiktok.svg))]",
+    },
+  ];
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactType>({ resolver: zodResolver(ContactFormSchema) });
+
+  const onSubmit = () => {};
+
+  return { items, register, handleSubmit, onSubmit, errors };
+};
