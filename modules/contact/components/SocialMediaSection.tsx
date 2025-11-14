@@ -3,6 +3,7 @@
 import Button from "@/common/components/ui/Button";
 import { useContact } from "./useContact";
 import { SiGmail } from "react-icons/si";
+import Link from "next/link";
 
 function SocialMediaSection() {
   const { items } = useContact();
@@ -22,7 +23,13 @@ function SocialMediaSection() {
                 collaborations.
               </p>
             </div>
-            <Button>Send Email</Button>
+            <a
+              href='mailto:akmalrbc6@gmail.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Button>Send Email</Button>
+            </a>
           </div>
           <div className='rounded-2xl p-2 border-4 flex items-center justify-center w-16 h-16 border-neutral-200/60'>
             <SiGmail size={38} />
@@ -42,7 +49,13 @@ function SocialMediaSection() {
                   {item.description}
                 </p>
               </div>
-              <Button>{item.action}</Button>
+              <Link
+                href={item.url || ""}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Button>{item.action}</Button>
+              </Link>
             </div>
             <div className='rounded-2xl p-2 border-4 flex items-center justify-center w-16 h-16 border-neutral-200/60'>
               {item.icon}

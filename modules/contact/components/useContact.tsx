@@ -15,6 +15,7 @@ export const useContact = () => {
       action: "View Profile",
       icon: <BsInstagram size={38} />,
       background: "bg-[url(/backgroundSocialMedia/instagram.svg))]",
+      url: "https://www.instagram.com/akmal_2yu",
     },
     {
       title: "LinkedIn",
@@ -23,6 +24,7 @@ export const useContact = () => {
       action: "View Profile",
       icon: <FaLinkedin size={38} />,
       background: "bg-[url(/backgroundSocialMedia/linkedin.svg))]",
+      url: "https://www.linkedin.com/in/akmal-l-0365ab2b5/",
     },
     {
       title: "GitHub",
@@ -31,6 +33,7 @@ export const useContact = () => {
       action: "View Repositories",
       icon: <SiGithub size={38} />,
       background: "bg-[url(/backgroundSocialMedia/github.svg))]",
+      github: "https://github.com/Onlyadmirer",
     },
     {
       title: "TikTok",
@@ -38,6 +41,7 @@ export const useContact = () => {
       action: "Watch Content",
       icon: <FaTiktok size={38} />,
       background: "bg-[url(/backgroundSocialMedia/tiktok.svg))]",
+      url: "https://www.tiktok.com/@akmalrbc2",
     },
   ];
 
@@ -47,7 +51,5 @@ export const useContact = () => {
     formState: { errors },
   } = useForm<ContactType>({ resolver: zodResolver(ContactFormSchema) });
 
-  const onSubmit = () => {};
-
-  return { items, register, handleSubmit, onSubmit, errors };
+  return { items, register, handleSubmit, errors };
 };
