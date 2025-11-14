@@ -1,3 +1,4 @@
+import About from "@/modules/about/About";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 function page() {
-  return <div>page</div>;
+  return <About />;
 }
 
 export default page;
