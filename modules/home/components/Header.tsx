@@ -3,7 +3,7 @@ function Header() {
     <div className='space-y-4 border-b pb-6 border-primary/50'>
       <div className='space-y-2'>
         <h1 className='text-3xl font-semibold'>Hi I{"'"}m Akmal</h1>
-        <ul className='list-disc ml-5 flex text-muted flex-row gap-12'>
+        <ul className='list-disc ml-5 flex text-muted-foreground flex-row gap-12'>
           <li>Based in Enrekang, Indonesia ID</li>
           <li>Onsite</li>
         </ul>

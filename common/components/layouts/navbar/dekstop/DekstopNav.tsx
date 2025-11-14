@@ -24,7 +24,7 @@ function DekstopNav() {
             <h1 className='text-2xl font-semibold '>Akmal</h1>
             <RiVerifiedBadgeFill className='text-cyan-400' size={20} />
           </div>
-          <p className='text-sm text-muted'>@akmal</p>
+          <p className='text-sm text-muted-foreground'>@akmal</p>
         </div>
         <div>
           <ThemeToggle />
@@ -35,10 +35,10 @@ function DekstopNav() {
           <Link
             href={item.href}
             key={item.label}
-            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 hover:text-primary transition-all duration-200 ease-in-out hover:bg-muted/10 ${
+            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 hover:text-primary transition-all duration-200 ease-in-out hover:bg-muted-foreground/20 ${
               pathName === item.href
-                ? "bg-muted/10 text-primary scale-105"
-                : "bg-transparent text-muted"
+                ? "bg-muted-foreground/20 text-primary scale-105"
+                : "bg-transparent text-muted-foreground"
             }`}
           >
             <div className='flex flex-row items-center gap-2'>

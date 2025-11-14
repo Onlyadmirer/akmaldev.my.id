@@ -36,7 +36,7 @@ function Featured() {
             </div>
             <div>
               <h2 className='text-sm font-medium'>Projects</h2>
-              <p className='text-xs text-muted'>
+              <p className='text-xs text-muted-foreground'>
                 Discover the works I’ve built and crafted with passion.
               </p>
             </div>
@@ -54,7 +54,7 @@ function Featured() {
               </div>
               <div className='text-center'>
                 <h2 className='text-sm font-medium'>About me</h2>
-                <p className='text-xs text-muted max-w-58'>
+                <p className='text-xs text-muted-foreground max-w-58'>
                   Learn more about who I am and what drives me.
                 </p>
               </div>
@@ -76,7 +76,7 @@ function Featured() {
               </div>
               <div className='text-center'>
                 <h2 className='text-sm font-medium'>Skills</h2>
-                <p className='text-xs text-muted max-w-58'>
+                <p className='text-xs text-muted-foreground max-w-58'>
                   Expertise across web and UI/UX technologies.
                 </p>
               </div>
@@ -98,7 +98,7 @@ function Featured() {
               </div>
               <div className='text-center'>
                 <h2 className='text-sm font-medium'>Achievements</h2>
-                <p className='text-xs text-muted max-w-58'>
+                <p className='text-xs text-muted-foreground max-w-58'>
                   Highlights from projects, programs, and community
                   contributions.
                 </p>
@@ -118,7 +118,7 @@ function Featured() {
               </div>
               <div className='text-center'>
                 <h2 className='text-sm font-medium'>Contact</h2>
-                <p className='text-xs text-muted '>
+                <p className='text-xs text-muted-foreground '>
                   Get in touch or collaborate with me.
                 </p>
               </div>
@@ -140,7 +140,7 @@ function Featured() {
               </div>
               <div>
                 <h2 className='text-sm font-medium'>Dashboard</h2>
-                <p className='text-xs text-muted'>
+                <p className='text-xs text-muted-foreground'>
                   Personal insights and data-driven portfolio view.
                 </p>
               </div>
