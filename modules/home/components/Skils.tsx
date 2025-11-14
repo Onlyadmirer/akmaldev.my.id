@@ -22,7 +22,7 @@ function Skils() {
       <div className='grid grid-cols-5 md:grid-cols-7 lg:grid-cols-11 items-start pt-6 space-y-3 lg:space-y-4'>
         {skills.map((skill) => (
           <Tooltip key={skill.key}>
-            <TooltipTrigger className='hover:scale-105 relative overflow-hidden h-16 w-16 lg:h-14 lg:w-14 transition-all duration-300 ease-in-out'>
+            <TooltipTrigger className='hover:scale-105 relative overflow-hidden h-16 w-16 lg:h-13 lg:w-13 transition-all duration-300 ease-in-out'>
               <Link href={skill.link} target='_blank' rel='noopener noreferrer'>
                 <Image
                   src={skill.icon}
