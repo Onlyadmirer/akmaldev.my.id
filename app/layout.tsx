@@ -5,6 +5,7 @@ import Layouts from "@/common/components/layouts/Layouts";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import Background from "@/common/components/layouts/background/Background";
 import TopLoader from "@/common/components/elements/TopLoader";
+import { Toaster } from "@/common/components/ui/sonner";
 
 const fontOnest = Onest({
   subsets: ["latin"],
@@ -69,7 +70,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={` ${fontOnest.className} antialiased`}>
         <TopLoader />
-
+        <Toaster position='bottom-right' />
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

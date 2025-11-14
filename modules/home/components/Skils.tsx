@@ -13,7 +13,7 @@ function Skils() {
   const skills = useSkill();
 
   return (
-    <div className='py-6 border-b border-muted/50'>
+    <div className='py-6 border-b border-muted-foreground/50'>
       <SubSectionHeader
         icon={<GrTechnology size={24} />}
         title='skills & tools'

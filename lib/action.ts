@@ -2,6 +2,7 @@
 
 import { ContactFormSchema, ContactType } from "./ContactFormSchema";
 import { Resend } from "resend"
+import { emailTemplate } from "./emailTemplate";
 
 
 export async function submitForm(data: ContactType) {
@@ -15,20 +16,18 @@ export async function submitForm(data: ContactType) {
     }
   }
 
-  const { name, email, message } = data;
+  const { name } = data;
 
   const resend = new Resend(process.env.RESEND_API_KEY);
+
+  const emailHtml = emailTemplate(data)
+
   try {
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || "",
       to: process.env.RESEND_TO_EMAIL || "",
-      subject: `Pesan baru dari ${data.name}`,
-      html: `
-              <h3>Detail Kontak Baru:</h3>
-              <p><strong>Nama:</strong> ${name}</p>
-              <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Pesan:</strong> ${message}</p>
-            `,
+      subject: `Pesan baru dari ${name}`,
+      html: emailHtml
     })
     return { success: "Email berhasil dikirim" }
   } catch (error) {

@@ -20,7 +20,7 @@ function MobileNav() {
     >
       <div
         className={`flex flex-row justify-between ${
-          showMenu && "border-b border-muted/50 py-2"
+          showMenu && "border-b border-muted-foreground/50 py-2"
         }`}
       >
         <div
@@ -29,7 +29,7 @@ function MobileNav() {
           }`}
         >
           <div
-            className={`overflow-hidden w-9 h-9 rounded-full border-2 border-muted/50 relative ${
+            className={`overflow-hidden w-9 h-9 rounded-full border-2 border-muted-foreground/50 relative ${
               showMenu && "h-18 w-18"
             }`}
           >
@@ -80,9 +80,9 @@ function MobileNav() {
             href={item.href}
             key={item.label}
             onClick={() => setShowMenu(!showMenu)}
-            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 transition-all duration-200 ease-in-out hover:bg-muted/10 ${
+            className={`flex flex-row justify-between py-2 rounded-lg px-4 items-center hover:scale-105 transition-all duration-200 ease-in-out hover:bg-muted-foreground/10 ${
               pathName === item.href
-                ? "bg-muted/10 scale-105"
+                ? "bg-muted-foreground/10 scale-105"
                 : "bg-transparent"
             }`}
           >

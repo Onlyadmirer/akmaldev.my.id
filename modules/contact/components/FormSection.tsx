@@ -1,29 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useContact } from "./useContact";
-import { submitForm } from "@/lib/action";
-import { ContactType } from "@/lib/ContactFormSchema";
+import { useFormSection } from "./useFormSection";
 
 function FormSection() {
   const { register, handleSubmit, errors } = useContact();
-
-  const [submissionStatus, setSubmissionStatus] = useState("");
-
-  const onSubmit = async (formData: ContactType) => {
-    try {
-      const result = await submitForm(formData);
-
-      if (result?.success) {
-        setSubmissionStatus(result.success);
-      } else {
-        setSubmissionStatus(result?.error || "Failed to send message.");
-      }
-    } catch (error) {
-      console.error("Submission Error:", error);
-      setSubmissionStatus("An unexpected error occurred.");
-    }
-  };
+  const { onSubmit } = useFormSection();
 
   return (
     <div className='py-6 space-y-4'>
@@ -86,18 +68,6 @@ function FormSection() {
           >
             Send Email
           </button>
-          {/* Status Feedback */}
-          {submissionStatus && (
-            <p
-              className={`col-span-2 text-center font-medium ${
-                submissionStatus.includes("successfully")
-                  ? "text-green-500"
-                  : "text-red-500"
-              }`}
-            >
-              {submissionStatus}
-            </p>
-          )}
         </form>
       </div>
     </div>
