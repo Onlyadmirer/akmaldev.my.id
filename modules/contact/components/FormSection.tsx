@@ -1,9 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import { useContact } from "./useContact";
+import { submitForm } from "@/lib/action";
+import { ContactType } from "@/lib/ContactFormSchema";
 
 function FormSection() {
-  const { register, onSubmit, handleSubmit, errors } = useContact();
+  const { register, handleSubmit, errors } = useContact();
+
+  const [submissionStatus, setSubmissionStatus] = useState("");
+
+  const onSubmit = async (formData: ContactType) => {
+    try {
+      const result = await submitForm(formData);
+
+      if (result?.success) {
+        setSubmissionStatus(result.success);
+      } else {
+        setSubmissionStatus(result?.error || "Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      setSubmissionStatus("An unexpected error occurred.");
+    }
+  };
 
   return (
     <div className='py-6 space-y-4'>
@@ -45,18 +65,39 @@ function FormSection() {
               </div>
             )}
           </div>
-          <textarea
-            placeholder='Message'
-            required
-            {...register}
-            className='rounded-lg px-4 py-2 border-3 row-start-3 md:row-start-2 md:col-span-2 border-neutral-500'
-          />
+          <div className='felx flex-col row-start-3 w-full md:row-start-2 md:col-span-2 '>
+            <textarea
+              placeholder='Message'
+              required
+              {...register("message")}
+              className='rounded-lg px-4 py-2 border-3 w-full border-neutral-500'
+            />
+            {errors.email && (
+              <div>
+                <p className='text-xs pl-1 text-red-500'>
+                  {errors.email.message}
+                </p>
+              </div>
+            )}
+          </div>
           <button
             type='submit'
             className='rounded-lg w-full py-2 text-neutral-200 cursor-pointer focus:ring-2 ring-neutral-500 focus:ring-offset-2  dark:text-neutral-800 font-medium bg-neutral-600 transition-all duration-300 ease-in-out hover:bg-neutral-400 dark:bg-neutral-300 col-span-2'
           >
             Send Email
           </button>
+          {/* Status Feedback */}
+          {submissionStatus && (
+            <p
+              className={`col-span-2 text-center font-medium ${
+                submissionStatus.includes("successfully")
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              {submissionStatus}
+            </p>
+          )}
         </form>
       </div>
     </div>
