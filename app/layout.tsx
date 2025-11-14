@@ -13,19 +13,20 @@ const fontOnest = Onest({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_DOMAIN ??
-      (process.env.NODE_ENV === "production"
-        ? "https://akmal.my.id"
-        : "http://localhost:3000")
-  ),
   title: {
-    default: "Akmaldev",
+    default: "My Portfolio | Akmaldev",
     template: "%s | Akmaldev",
   },
   description:
     "The personal portfolio of Akmal — a web developer passionate about building clean, modern, and efficient web experiences.",
-  keywords: ["Akmal", "Akmaldev", "Web Developer", "Portfolio", "Next.js"],
+  keywords: [
+    "akmal",
+    "akmaldev",
+    "akmal dev",
+    "web developer",
+    "portfolio",
+    "Next.js",
+  ],
   creator: "Akmal",
   authors: [{ name: "Akmal", url: process.env.NEXT_PUBLIC_DOMAIN }],
   openGraph: {
@@ -38,26 +39,12 @@ export const metadata: Metadata = {
       "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
     images: [
       {
-        url: "/pp.jpeg",
+        url: `${process.env.NEXT_PUBLIC_DOMAIN}/pp.jpeg`,
         width: 1200,
         height: 630,
         alt: "Akmaldev Portfolio Preview",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Akmaldev — Web Developer & Designer",
-    description:
-      "Explore Akmal’s portfolio showcasing projects, achievements, and creative work in web development.",
-    images: ["/pp.jpeg"],
-  },
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_DOMAIN,
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
