@@ -1,9 +1,9 @@
 function Header() {
   return (
-    <div className='space-y-4 border-b pb-6 border-primary/50'>
+    <div className='pb-6 space-y-4 border-b border-primary/50'>
       <div className='space-y-2'>
         <h1 className='text-3xl font-semibold'>Hi I{"'"}m Akmal</h1>
-        <ul className='list-disc ml-5 flex text-muted-foreground flex-row gap-12'>
+        <ul className='flex flex-col ml-5 list-disc lg:gap-12 text-muted-foreground lg:flex-row'>
           <li>Based in Enrekang, Indonesia ID</li>
           <li>Onsite</li>
         </ul>
