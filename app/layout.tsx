@@ -14,7 +14,7 @@ const fontOnest = Onest({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_DOMAIN || "https://www.akmal.my.id"
+    process.env.NEXT_PUBLIC_DOMAIN || "https://www.akmaldev.my.id"
   ),
   title: {
     default: "My Portfolio | Akmaldev",
