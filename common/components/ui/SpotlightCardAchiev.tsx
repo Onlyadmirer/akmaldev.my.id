@@ -12,7 +12,7 @@ interface SpotlightCardProps extends React.PropsWithChildren {
   spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
 }
 
-const SpotlightCard: React.FC<SpotlightCardProps> = ({
+const SpotlightCardAchiev: React.FC<SpotlightCardProps> = ({
   children,
   className = "",
   spotlightColor = "rgba(255, 255, 255, 0.25)",
@@ -55,7 +55,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-3xl border border-neutral-500 dark:border-neutral-800 bg-neutral-200 dark:bg-neutral-900 overflow-hidden p-6 ${className}`}
+      className={`relative rounded-xl border w-60 border-neutral-400 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-900 overflow-hidden ${className}`}
     >
       <div
         className='pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out'
@@ -69,4 +69,4 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
   );
 };
 
-export default SpotlightCard;
+export default SpotlightCardAchiev;
