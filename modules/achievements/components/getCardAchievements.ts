@@ -1,8 +1,8 @@
 import { prisma } from "@/lib/prisma"
 
 export const getCardAchievements = async () => {
-  const user = await prisma.user.findUnique({
-    where: { email: 'akmalrbc6@gmail.com' },
+  const user = await prisma.user.findFirst({
+    where: { role: "Admin" },
     include: {
       achievements: {
         select: {
